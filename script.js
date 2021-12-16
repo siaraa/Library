@@ -49,8 +49,8 @@ form.addEventListener('submit', (e) => {
 
     // add new book
     else {
-        var book = new Book(title.value, author.value, priority.value, category.value);
-        var addBook = Object.values(book);
+        let book = new Book(title.value, author.value, priority.value, category.value);
+        let addBook = Object.values(book);
         library.push(book);
         window.localStorage.setItem('library', JSON.stringify(library)); 
 
@@ -69,10 +69,10 @@ form.addEventListener('submit', (e) => {
 });
 
 function addBooks (addBook) {
-    var table = document.getElementById("myStorage__table");
-    var row = table.insertRow(-1);
+    let table = document.getElementById("myStorage__table");
+    let row = table.insertRow(-1);
     for(i=0; i <= addBook.length -1; i++) {
-        var cell1 = row.insertCell(-1);
+        let cell1 = row.insertCell(-1);
         cell1.innerHTML = addBook[i];
     };
 }
@@ -81,10 +81,10 @@ function showLibrary() {
     let libraryStorage = JSON.parse(window.localStorage.getItem('library'));
     for (i = 0; i <= libraryStorage.length - 1; i++) {
         let books = Object.values(libraryStorage[i]);
-        var table = document.getElementById("myStorage__table");
-        var row = table.insertRow(-1);
+        let table = document.getElementById("myStorage__table");
+        let row = table.insertRow(-1);
         for (j = 0; j < books.length; j++) {
-            var cell1 = row.insertCell(-1);
+            let cell1 = row.insertCell(-1);
             cell1.innerHTML = books[i, j];
         };
     };
